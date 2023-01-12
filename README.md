@@ -16,6 +16,9 @@ W folderze w którym skompilowałeś program powinien pojawić się plik wykonaw
 
 ## Funkcjonalności
 
+- Interfejs użytkownika w postaci menu konsolowego.
 - Dodawanie nowego przystanku do trasy,
 - Wyświetlanie list reprezentującej trasę,
-- Interfejs użytkownika w postaci menu konsolowego.
+- Usuwanie przystanków z listy po współżędnych (x,y) lub nazwie.
+- Zamiana miejscami przystanków po współżędnych (x,y) lub nazwie.
+- Sprawdzanie czy przystanek istnieje po współżędnych (x,y) lub nazwie.
