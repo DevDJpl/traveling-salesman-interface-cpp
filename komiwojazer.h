@@ -2,6 +2,9 @@
 // =================== KLASA KOMIWOJAZERA - PLIK NAGŁÓWKOWY ===================
 // ============================================================================
 
+#ifndef KOMIWOJAZER_H
+#define KOMIWOJAZER_H
+
 #include <iostream>
 #include <list>
 #include <string>
@@ -10,13 +13,12 @@
 using namespace std;
 
 class Komiwojazer {
-    private:
-      struct Przystanek {
-        int x, y;
-        string nazwa;
-        double dystans;
-      };
-      list<Przystanek> trasa;
+    struct Przystanek {
+      int x, y;
+      string nazwa;
+      double dystans;
+    };
+    list<Przystanek> trasa;
 
     public:
       // ================== DEKLARACJA METODY DODAJĄCEJ PRZYSTANEK ==================
@@ -25,3 +27,5 @@ class Komiwojazer {
       void wyswietlTrase();
 
 };
+
+#endif

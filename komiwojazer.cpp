@@ -3,10 +3,12 @@
 // ============================================================================
 
 #include <iostream>
+#include <string> 
 #include <list>
-#include <string>
 #include <cmath>
 #include "komiwojazer.h"
+
+using namespace std;
 
 // ====== DODAJ "PRZYSTANEK" NA TRASIE POPRZEZ PODANIE KOORDYNATÓW I NAZWY (NP.: MIASTA) ======
 void Komiwojazer::dodajPrzystanek(int x, int y, string nazwa) {
@@ -26,8 +28,6 @@ void Komiwojazer::dodajPrzystanek(int x, int y, string nazwa) {
 // =========== WYŚWIETL TRASĘ "KOMIWOJAŻERA" WSZYSTKICH PRZYSTANKÓW Z KOORDYNATAMI ===========
 void Komiwojazer::wyswietlTrase() {
   for (auto przystanek : trasa) {
-      cout << przystanek.name << ": (" << przystanek.x << ", " << przystanek.y << ")" << endl;
+      cout << przystanek.nazwa << ": (" << przystanek.x << ", " << przystanek.y << ")" << endl;
   }
 }
-
-using namespace std;
