@@ -25,6 +25,10 @@ class Komiwojazer {
       void dodajPrzystanek(int x, int y, string nazwa); 
       // ================== DEKLARACJA METODY DODAJĄCEJ PRZYSTANEK ==================
       void wyswietlTrase();
+      // ========= DEKLARACJA METODY USUWAJĄCEJ PRZYSTANEK PO KOORDYNATACH ==========
+      void usunPrzystanekPoXY(int x, int y);
+      // ========= DEKLARACJA METODY USUWAJĄCEJ PRZYSTANEK PO JEGO NAZWIE ===========
+      void usunPrzystanekPoNazwa(std::string name);
 
 };
 

@@ -18,9 +18,10 @@ int main() {
   while (true) {
     cout << "========== MENU OBSŁUGI TRASY ==========" << endl;
     cout << "Wybierz opcję:" << endl;
-    cout << "1. Dodaj punkt" << endl;
-    cout << "2. Wyświetl listę trasy" << endl;
-    cout << "3. Zakończ program" << endl;
+    cout << "1. Dodaj przystanek" << endl;
+    cout << "2. Usuń przystanek" << std::endl;
+    cout << "3. Wyświetl listę trasy" << endl;
+    cout << "4. Zakończ program" << endl;
     cout << "========================================" << endl;
 
     int wybor;
@@ -36,18 +37,35 @@ int main() {
       cin >> x;
       cout << "Podaj wartość Y: ";
       cin >> y;
-      cout << "Podaj nazwę punktu: ";
+      cout << "Podaj nazwę przystanku (bez spacji): ";
       cin >> nazwa;
 
       system("cls");
       kw.dodajPrzystanek(x, y, nazwa);
     } else if (wybor == 2) {
+        cout << "Chcesz usunąć przystanek przez podanie (1) wartości X i Y lub (2) nazwy?" << endl;
+        int opcja;
+        cin >> opcja;
+        if (opcja == 1) {
+            int x, y;
+            cout << "Podaj wartość X: ";
+            cin >> x;
+            cout << "Podaj wartość Y: ";
+            cin >> y;
+            kw.usunPrzystanekPoXY(x, y);
+        } else if (opcja == 2) {
+            string nazwa;
+            cout << "Podaj nazwę przystanku: ";
+            cin >> nazwa;
+            kw.usunPrzystanekPoNazwa(nazwa);
+        }
+    } else if (wybor == 3) {
         system("cls");
         kw.wyswietlTrase();
-    } else if (wybor == 3) {
+    } else if (wybor == 4) {
         break;
     } else {
-      cout << "Wybierz opcję od 1 do 3";
+        cout << "Wybierz opcję od 1 do 4";
     }
 
 
