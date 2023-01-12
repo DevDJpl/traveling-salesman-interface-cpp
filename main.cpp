@@ -19,10 +19,11 @@ int main() {
     cout << "========== MENU OBSŁUGI TRASY ==========" << endl;
     cout << "Wybierz opcję:" << endl;
     cout << "1. Dodaj przystanek" << endl;
-    cout << "2. Usuń przystanek" << std::endl;
+    cout << "2. Usuń przystanek" << endl;
     cout << "3. Wyświetl listę trasy" << endl;
-    cout << "4. Zamień przystanki miejscami" << std::endl;
-    cout << "5. Zakończ program" << endl;
+    cout << "4. Zamień przystanki miejscami" << endl;
+    cout << "5. Sprawdź czy punkt istnieje" << endl;
+    cout << "6. Zakończ program" << endl;
     cout << "========================================" << endl;
 
     int wybor;
@@ -91,6 +92,31 @@ int main() {
         cout << "Wybierz opcję 1 lub 2" << endl;
       }
     } else if (wybor == 5) {
+        cout << "Chcesz sprawdzić czy przystanek istnieje przez podanie (1) wartości X i Y lub (2) nazwy?" << endl;
+        int opcja;
+        cin >> opcja;
+        if (opcja == 1) {
+          int x, y;
+          cout << "Podaj wartość X: ";
+          cin >> x;
+          cout << "Podaj wartość Y: ";
+          cin >> y;
+          if (kw.przystanekIstniejePoXY(x, y)) {
+              cout << "Przystanek o podanych wartościach (" << x << "," << y << ") istnieje na liście" << endl;
+          } else {
+              cout << "Przystanek o podanych wartościach (" << x << "," << y << ") nie istnieje na liście" << endl;
+          }
+      } else if (opcja == 2) {
+          string nazwa;
+          cout << "Podaj nazwę przystanku: ";
+          cin >> nazwa;
+          if (kw.przystanekIstniejePoNazwa(nazwa)) {
+              cout << "Przystanek o podanej nazwie: " << nazwa << " istnieje na liście" << endl;
+          } else {
+              cout << "Przystanek o podanej nazwie: " << nazwa << " nie istnieje na liście" << endl;
+          }
+      }
+    } else if (wybor == 6) {
         break;
     } else {
         cout << "Wybierz opcję od 1 do 4";

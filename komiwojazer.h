@@ -33,7 +33,10 @@ class Komiwojazer {
       void zamienKolejnosciaPoXY(int x1, int y1, int x2, int y2);
       // ========= DEKLARACJA METODY ZAMIENIAJĄCEJ PRZYSTANKI PO ICH NAZWIE =========
       void zamienKolejnosciaPoNazwa(string nazwa1, string nazwa2);
-
+      // === DEKLARACJA METODY SPRAWDZAJĄCEJ ISTNIENIE PRZYSTANKU PO KOORDYNATACH ===
+      bool przystanekIstniejePoXY(int x, int y);
+      // ====== DEKLARACJA METODY SPRAWDZAJĄCEJ ISTNIENIE PRZYSTANKU PO NAZWIE ======
+      bool przystanekIstniejePoNazwa(string nazwa);
 };
 
 #endif

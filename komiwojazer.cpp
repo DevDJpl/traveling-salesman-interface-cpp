@@ -55,6 +55,7 @@ void Komiwojazer::usunPrzystanekPoNazwa(std::string nazwa) {
     }
 }
 
+// ================ ZAMIEŃ PRZYSTANKI MIEJSCAMI PRZEZ PODANIE ICH KOORDYNATÓW =================
 void Komiwojazer::zamienKolejnosciaPoXY(int x1, int y1, int x2, int y2) {
     auto item1 = trasa.end(), item2 = trasa.end();
     for (auto item = trasa.begin(); item != trasa.end(); item++) {
@@ -70,6 +71,7 @@ void Komiwojazer::zamienKolejnosciaPoXY(int x1, int y1, int x2, int y2) {
     }
 }
 
+// =================== ZAMIEŃ PRZYSTANKI MIEJSCAMI PRZEZ PODANIE ICH NAZWA ===================
 void Komiwojazer::zamienKolejnosciaPoNazwa(string nazwa1, string nazwa2) {
     auto item1 = trasa.end(), item2 = trasa.end();
     for (auto it = trasa.begin(); it != trasa.end(); it++) {
@@ -83,4 +85,24 @@ void Komiwojazer::zamienKolejnosciaPoNazwa(string nazwa1, string nazwa2) {
     if (item1 != trasa.end() && item2 != trasa.end()) {
         iter_swap(item1, item2);
     }
+}
+
+// ============ SPRAWDŹ CZY PRZYSTANEK ISTNIEJE PRZEZ PODANIE JEGO KOORDYNATÓW ==============
+bool Komiwojazer::przystanekIstniejePoXY(int x, int y) {
+    for (auto przystanek : trasa) {
+        if (przystanek.x == x && przystanek.y == y) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// =============== SPRAWDŹ CZY PRZYSTANEK ISTNIEJE PRZEZ PODANIE JEGO NAZWY =================
+bool Komiwojazer::przystanekIstniejePoNazwa(string nazwa) {
+    for (auto przystanek : trasa) {
+        if (przystanek.nazwa == nazwa) {
+            return true;
+        }
+    }
+    return false;
 }
