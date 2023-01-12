@@ -27,7 +27,10 @@ void Komiwojazer::dodajPrzystanek(int x, int y, string nazwa) {
 
 // =========== WYŚWIETL TRASĘ "KOMIWOJAŻERA" WSZYSTKICH PRZYSTANKÓW Z KOORDYNATAMI ===========
 void Komiwojazer::wyswietlTrase() {
+  cout << "========== MENU OBSŁUGI TRASY ==========" << endl;
+  int lp = 1;
   for (auto przystanek : trasa) {
-      cout << przystanek.nazwa << ": (" << przystanek.x << ", " << przystanek.y << ")" << endl;
+    cout << "[" << lp << "] " << przystanek.nazwa << ": (" << przystanek.x << ", " << przystanek.y << ")" << endl;
+    lp++;
   }
 }

@@ -1,26 +1,25 @@
 // ============================================================================
 // ================ GLÓWNA FUNKCJA MAIN - INTERFEJS UŻYTKOWNIKA ===============
 // ============================================================================
-
 #include <iostream>
 #include <list>
 #include <string>
 #include <cmath>
-#include <string> 
 #include "komiwojazer.h"
 #include "komiwojazer.cpp" // !sam plik .h w VSCode generuje błąd!
-
 using namespace std;
 
 int main() {
+  system("chcp 65001");
+  system("cls"); // ustaw polskie znaki i wyczysc konsole
   Komiwojazer kw;
 
   // =============== INTERFEJS UŻYTKOWNIKA - MENU OBSŁUGI LISTY ===============
   while (true) {
-    cout << "========== LISTA KOMIWOJAZERA ==========" << endl;
+    cout << "========== MENU OBSŁUGI TRASY ==========" << endl;
     cout << "Wybierz opcję:" << endl;
     cout << "1. Dodaj punkt" << endl;
-    cout << "2. Wyświetl listę punktów" << endl;
+    cout << "2. Wyświetl listę trasy" << endl;
     cout << "3. Zakończ program" << endl;
     cout << "========================================" << endl;
 
@@ -40,9 +39,10 @@ int main() {
       cout << "Podaj nazwę punktu: ";
       cin >> nazwa;
 
+      system("cls");
       kw.dodajPrzystanek(x, y, nazwa);
-
     } else if (wybor == 2) {
+        system("cls");
         kw.wyswietlTrase();
     } else if (wybor == 3) {
         break;
