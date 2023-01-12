@@ -106,3 +106,17 @@ bool Komiwojazer::przystanekIstniejePoNazwa(string nazwa) {
     }
     return false;
 }
+
+// 
+double Komiwojazer::getDlugoscTrasy() {
+    double dlugosc = 0;
+    Przystanek poprzedniPrzystanek;
+    
+    for (auto item = trasa.begin(); item != trasa.end(); item++) {
+        if (item != trasa.begin()) {
+            dlugosc += item->dystans;
+        }
+        poprzedniPrzystanek = *item;
+    }
+    return dlugosc;
+}

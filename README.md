@@ -10,7 +10,7 @@ W folderze w którym skompilowałeś program powinien pojawić się plik wykonaw
 
 # Wersja i jej funkcjonalności
 
-## Wersja programu: <span style="color:blue">1.0.6</span>
+## Wersja programu: <span style="color:blue">1.0.7</span>
 
 > **Uwaga:** Podnosić kolejno o 1 tylko w przypadku edycji plików C++
 
@@ -18,7 +18,7 @@ W folderze w którym skompilowałeś program powinien pojawić się plik wykonaw
 
 - Interfejs użytkownika w postaci menu konsolowego.
 - Dodawanie nowego przystanku do trasy,
-- Wyświetlanie list reprezentującej trasę,
+- Wyświetlanie listy reprezentującej trasę,
 - Usuwanie przystanków z listy po współżędnych (x,y) lub nazwie.
 - Zamiana miejscami przystanków po współżędnych (x,y) lub nazwie.
 - Sprawdzanie czy przystanek istnieje po współżędnych (x,y) lub nazwie.

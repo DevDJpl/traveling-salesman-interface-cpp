@@ -23,7 +23,8 @@ int main() {
     cout << "3. Wyświetl listę trasy" << endl;
     cout << "4. Zamień przystanki miejscami" << endl;
     cout << "5. Sprawdź czy punkt istnieje" << endl;
-    cout << "6. Zakończ program" << endl;
+    cout << "6. Wyświetl długość trasy" << endl;
+    cout << "7. Zakończ program" << endl;
     cout << "========================================" << endl;
 
     int wybor;
@@ -117,11 +118,12 @@ int main() {
           }
       }
     } else if (wybor == 6) {
+        cout << "Długość całej trasy: " << kw.getDlugoscTrasy() << endl;
+    } else if (wybor == 7) {
         break;
     } else {
         cout << "Wybierz opcję od 1 do 4";
     }
-
 
   }
 

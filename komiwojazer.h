@@ -37,6 +37,8 @@ class Komiwojazer {
       bool przystanekIstniejePoXY(int x, int y);
       // ====== DEKLARACJA METODY SPRAWDZAJĄCEJ ISTNIENIE PRZYSTANKU PO NAZWIE ======
       bool przystanekIstniejePoNazwa(string nazwa);
+      // ============== DEKLARACJA METODY SPRAWDZAJĄCEJ DŁUGOŚĆ TRASY ===============
+      double getDlugoscTrasy();
 };
 
 #endif
