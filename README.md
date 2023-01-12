@@ -10,7 +10,7 @@ W folderze w którym skompilowałeś program powinien pojawić się plik wykonaw
 
 # Wersja i jej funkcjonalności
 
-## Wersja programu: <span style="color:blue">1.0.7</span>
+## Wersja programu: <span style="color:blue">1.0.8</span>
 
 > **Uwaga:** Podnosić kolejno o 1 tylko w przypadku edycji plików C++
 

@@ -6,6 +6,9 @@
 #include <string> 
 #include <list>
 #include <cmath>
+#include <fstream>
+#include <vector>
+#include <algorithm>
 #include "komiwojazer.h"
 
 using namespace std;
@@ -107,7 +110,7 @@ bool Komiwojazer::przystanekIstniejePoNazwa(string nazwa) {
     return false;
 }
 
-// 
+// ======================== WYŚWIETLA DŁUGOŚĆ TRASY KOMIWOJAŻERA ===========================
 double Komiwojazer::getDlugoscTrasy() {
     double dlugosc = 0;
     Przystanek poprzedniPrzystanek;
@@ -119,4 +122,37 @@ double Komiwojazer::getDlugoscTrasy() {
         poprzedniPrzystanek = *item;
     }
     return dlugosc;
+}
+
+// ======================== WYEKSPORTUJ "MAPĘ" PUNKTÓW DO EXCELA ===========================
+void Komiwojazer::setMaxXMaxY() {
+    maxX = maxY = 0;
+    for (const auto& przystanek : trasa) {
+        maxX = max(maxX, przystanek.x);
+        maxY = max(maxY, przystanek.y);
+    }
+}
+
+void Komiwojazer::eksportujDoCSV(const string& nazwaPliku) {
+    // Policz maxX i maxY
+    setMaxXMaxY();
+
+    // Przygotuj tablicę maxX na maxY
+    vector<vector<string>> grid(maxY+1, vector<string>(maxX+1, "0"));
+
+    // Uzupełnij komórki nazwami przystanków
+    for (const auto& przystanek : trasa) {
+        grid[przystanek.y][przystanek.x] = przystanek.nazwa;
+    }
+    ofstream file(nazwaPliku);
+    for (unsigned int i = 0; i <= maxY; i++) {
+        for (unsigned int j = 0; j <= maxX; j++) {
+            file << grid[i][j];
+            if (j != maxX) {
+                file << ";";
+            }
+        }
+        file << "\n";
+    }
+    file.close();
 }

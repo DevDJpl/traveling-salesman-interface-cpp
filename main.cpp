@@ -5,6 +5,9 @@
 #include <list>
 #include <string>
 #include <cmath>
+#include <fstream>
+#include <vector>
+#include <algorithm>
 #include "komiwojazer.h"
 #include "komiwojazer.cpp" // !sam plik .h w VSCode generuje błąd!
 using namespace std;
@@ -24,7 +27,8 @@ int main() {
     cout << "4. Zamień przystanki miejscami" << endl;
     cout << "5. Sprawdź czy punkt istnieje" << endl;
     cout << "6. Wyświetl długość trasy" << endl;
-    cout << "7. Zakończ program" << endl;
+    cout << "7. Wyświetl trasę w excelu" << endl;
+    cout << "8. Zakończ program" << endl;
     cout << "========================================" << endl;
 
     int wybor;
@@ -120,6 +124,9 @@ int main() {
     } else if (wybor == 6) {
         cout << "Długość całej trasy: " << kw.getDlugoscTrasy() << endl;
     } else if (wybor == 7) {
+      string nazwaPliku = "trasa_komiwojazera.csv";
+      kw.eksportujDoCSV(nazwaPliku);
+    }  else if (wybor == 8) {
         break;
     } else {
         cout << "Wybierz opcję od 1 do 4";

@@ -9,6 +9,9 @@
 #include <list>
 #include <string>
 #include <cmath>
+#include <vector>
+#include <algorithm>
+#include <fstream>
 
 using namespace std;
 
@@ -19,6 +22,8 @@ class Komiwojazer {
       double dystans;
     };
     list<Przystanek> trasa;
+    vector<Przystanek> trasa1;
+    int maxX, maxY;
 
     public:
       // ================== DEKLARACJA METODY DODAJĄCEJ PRZYSTANEK ==================
@@ -39,6 +44,9 @@ class Komiwojazer {
       bool przystanekIstniejePoNazwa(string nazwa);
       // ============== DEKLARACJA METODY SPRAWDZAJĄCEJ DŁUGOŚĆ TRASY ===============
       double getDlugoscTrasy();
+      // ============= DEKLARACJA METODY EKSPORTUJĄCEJ TRASĘ DO EXCELA ==============
+      void setMaxXMaxY();
+      void eksportujDoCSV(const string& nazwaPliku);
 };
 
 #endif
