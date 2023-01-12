@@ -54,3 +54,33 @@ void Komiwojazer::usunPrzystanekPoNazwa(std::string nazwa) {
         } 
     }
 }
+
+void Komiwojazer::zamienKolejnosciaPoXY(int x1, int y1, int x2, int y2) {
+    auto item1 = trasa.end(), item2 = trasa.end();
+    for (auto item = trasa.begin(); item != trasa.end(); item++) {
+        if (item->x == x1 && item->y == y1) {
+            item1 = item;
+        } else if (item->x == x2 && item->y == y2) {
+            item2 = item;
+        }
+    }
+
+    if (item1 != trasa.end() && item2 != trasa.end()) {
+        iter_swap(item1, item2);
+    }
+}
+
+void Komiwojazer::zamienKolejnosciaPoNazwa(string nazwa1, string nazwa2) {
+    auto item1 = trasa.end(), item2 = trasa.end();
+    for (auto it = trasa.begin(); it != trasa.end(); it++) {
+        if (it->nazwa == nazwa1) {
+            item1 = it;
+        } else if (it->nazwa == nazwa2) {
+            item2 = it;
+        }
+    }
+
+    if (item1 != trasa.end() && item2 != trasa.end()) {
+        iter_swap(item1, item2);
+    }
+}

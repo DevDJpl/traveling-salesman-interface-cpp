@@ -28,7 +28,11 @@ class Komiwojazer {
       // ========= DEKLARACJA METODY USUWAJĄCEJ PRZYSTANEK PO KOORDYNATACH ==========
       void usunPrzystanekPoXY(int x, int y);
       // ========= DEKLARACJA METODY USUWAJĄCEJ PRZYSTANEK PO JEGO NAZWIE ===========
-      void usunPrzystanekPoNazwa(std::string name);
+      void usunPrzystanekPoNazwa(string nazwa);
+      // ======== DEKLARACJA METODY ZAMIENIAJĄCEJ PRZYSTANKI PO KOORDYNATACH ========
+      void zamienKolejnosciaPoXY(int x1, int y1, int x2, int y2);
+      // ========= DEKLARACJA METODY ZAMIENIAJĄCEJ PRZYSTANKI PO ICH NAZWIE =========
+      void zamienKolejnosciaPoNazwa(string nazwa1, string nazwa2);
 
 };
 

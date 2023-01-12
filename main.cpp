@@ -21,7 +21,8 @@ int main() {
     cout << "1. Dodaj przystanek" << endl;
     cout << "2. Usuń przystanek" << std::endl;
     cout << "3. Wyświetl listę trasy" << endl;
-    cout << "4. Zakończ program" << endl;
+    cout << "4. Zamień przystanki miejscami" << std::endl;
+    cout << "5. Zakończ program" << endl;
     cout << "========================================" << endl;
 
     int wybor;
@@ -43,7 +44,7 @@ int main() {
       system("cls");
       kw.dodajPrzystanek(x, y, nazwa);
     } else if (wybor == 2) {
-        cout << "Chcesz usunąć przystanek przez podanie (1) wartości X i Y lub (2) nazwy?" << endl;
+        cout << "Chcesz usunąć przystanek przez podanie (1) wartości X i Y, czy (2) nazwy?" << endl;
         int opcja;
         cin >> opcja;
         if (opcja == 1) {
@@ -58,11 +59,38 @@ int main() {
             cout << "Podaj nazwę przystanku: ";
             cin >> nazwa;
             kw.usunPrzystanekPoNazwa(nazwa);
+        } else {
+          cout << "Wybierz opcję 1 lub 2" << endl;
         }
     } else if (wybor == 3) {
         system("cls");
         kw.wyswietlTrase();
     } else if (wybor == 4) {
+        cout << "Chcesz zamienić purzystanki miejscami przez podanie (1) wartości X i Y, czy (2) nazwy?" << endl;
+        int opcja;
+        cin >> opcja;
+        if (opcja == 1) {
+          int x1, y1, x2, y2;
+          cout << "Podaj wartość X pierwszego punktu: ";
+          cin >> x1;
+          cout << "Podaj wartość Y pierwszego punktu: ";
+          cin >> y1;
+          cout << "Podaj wartość X drugiego punktu: ";
+          cin >> x2;
+          cout << "Podaj wartość Y drugiego punktu: ";
+          cin >> y2;
+          kw.zamienKolejnosciaPoXY(x1, y1, x2, y2);
+      } else if (opcja == 2) {
+          string nazwa1, nazwa2;
+          cout << "Podaj nazwę pierwszego punktu: ";
+          cin >> nazwa1;
+          cout << "Podaj nazwę drugiego punktu: ";
+          cin >> nazwa2;
+          kw.zamienKolejnosciaPoNazwa(nazwa1, nazwa2);
+      } else {
+        cout << "Wybierz opcję 1 lub 2" << endl;
+      }
+    } else if (wybor == 5) {
         break;
     } else {
         cout << "Wybierz opcję od 1 do 4";
