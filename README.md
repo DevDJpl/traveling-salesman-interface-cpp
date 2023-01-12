@@ -17,8 +17,9 @@ W folderze w którym skompilowałeś program powinien pojawić się plik wykonaw
 ## Funkcjonalności
 
 - Interfejs użytkownika w postaci menu konsolowego.
-- Dodawanie nowego przystanku do trasy,
-- Wyświetlanie listy reprezentującej trasę,
+- Dodawanie nowego przystanku do trasy.
+- Wyświetlanie listy reprezentującej trasę.
 - Usuwanie przystanków z listy po współżędnych (x,y) lub nazwie.
 - Zamiana miejscami przystanków po współżędnych (x,y) lub nazwie.
 - Sprawdzanie czy przystanek istnieje po współżędnych (x,y) lub nazwie.
+- Eksportowanie trasy komiwojażera do mapy/tablicy w excelu.
