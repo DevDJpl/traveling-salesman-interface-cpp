@@ -47,6 +47,11 @@ class Komiwojazer {
       // ============= DEKLARACJA METODY EKSPORTUJĄCEJ TRASĘ DO EXCELA ==============
       void setMaxXMaxY();
       void eksportujDoCSV(const string& nazwaPliku);
+      void eksportujDoJSON(const string& nazwaPliku);
+      void eksportujDoTXT(const string& nazwaPliku);
+      void importujCSV(const string& nazwaPliku);
+      void importujJSON(const string& nazwaPliku);
+      void importujTXT(const string& nazwaPliku);
 };
 
 #endif

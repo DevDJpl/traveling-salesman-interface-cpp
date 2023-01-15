@@ -27,9 +27,10 @@ int main(){
     cout<<"4. Zamień przystanki miejscami"<<endl;
     cout<<"5. Sprawdź czy punkt istnieje"<<endl;
     cout<<"6. Wyświetl długość trasy"<<endl;
-    cout<<"7. Eksportuj do pliku"<<endl;
-    cout<<"8. Importuj z pliku"<<endl;
-    cout<<"9. Zakończ program"<<endl;
+    cout<<"7. Eksportuj do CSV (Utwórz macierz)"<<endl;
+    cout<<"8. Eksportuj do pliku"<<endl;
+    cout<<"9. Importuj z pliku"<<endl;
+    cout<<"10. Zakończ program"<<endl;
     cout<<"========================================"<<endl;
 
     int wybor;
@@ -167,11 +168,16 @@ int main(){
         break;
       case 7:
         {
+          string nazwaPliku = "trasa_komiwojazera.csv";
+          kw.eksportujDoCSV(nazwaPliku);
+        }
+        break;
+      case 8:
+        {
           cout<<"========== MENU EXPORTOWANIA =========="<<endl;
           cout<<"Wybierz opcję:"<<endl;
-          cout<<"1. CSV"<<endl;
-          cout<<"2. JSON"<<endl;
-          cout<<"3. TXT"<<endl;
+          cout<<"1. JSON"<<endl;
+          cout<<"2. TXT"<<endl;
           cout<<"========================================"<<endl;
 
           int opcja;
@@ -180,28 +186,24 @@ int main(){
           switch(opcja){
           case 1:
             {
-              string nazwaPliku = "trasa_komiwojazera.csv";
-              kw.eksportujDoCSV(nazwaPliku);
-            }
-            break;
-          case 2:
-            {
               string nazwaPliku = "trasa_komiwojazera.json";
               //kw.eksportujDoJSON(nazwaPliku);
             }
             break;
-          case 3:
+          case 2:
             {
               string nazwaPliku = "trasa_komiwojazera.txt";
-              //kw.eksportujDoTXT(nazwaPliku);
+              kw.eksportujDoTXT(nazwaPliku);
             }
             break;
           default:
-            cout<<"Wybierz opcję od 1 do 3";
+            cout<<"Wybierz opcję od 1 do 2";
             break;
           }
         }
-      case 8:
+        break;
+      /*
+      case 9:
         {
           cout<<"========== MENU IMPORTOWANIA =========="<<endl;
           cout<<"Wybierz opcję:"<<endl;
@@ -238,11 +240,12 @@ int main(){
           }
         }
         break;
-      case 9:
+      */
+      case 10:
 
         break;
       default:
-        cout<<"Wybierz opcję od 1 do 9";
+        cout<<"Wybierz opcję od 1 do 10";
         break;
     }
   }
