@@ -158,7 +158,27 @@ void Komiwojazer::eksportujDoCSV(const string& nazwaPliku){
 }
 
 void Komiwojazer::eksportujDoJSON(const string& nazwaPliku){
-    
+
+/*
+    {"employees":[    
+        {"name":"Ram", "email":"ram@gmail.com", "age":23},    
+        {"name":"Shyam", "email":"shyam23@gmail.com", "age":28},  
+        {"name":"John", "email":"john@gmail.com", "age":33},    
+        {"name":"Bob", "email":"bob32@gmail.com", "age":41}   
+    ]}  
+*/
+
+    ofstream file(nazwaPliku);
+    file<<"[";
+    for(auto& przystanek : trasa){
+        file<<"{\"name\":\""<<przystanek.nazwa<<"\",\"position\":[{\"x\":\""<<przystanek.x<<"\",\"y\":\""<<przystanek.y<<"\"}]}";
+        //file<<'{"name":"'<<przystanek.nazwa<<'"}';
+        //file<<'{"name":"'<<przystanek.nazwa<<'","position":[x:'<<przystanek.x<<',y:'<<przystanek.y<<']}';
+        if(&przystanek != &trasa.back()){
+            file<<",";
+        } 
+    }
+    file<<"]";
 }
 
 void Komiwojazer::eksportujDoTXT(const string& nazwaPliku){

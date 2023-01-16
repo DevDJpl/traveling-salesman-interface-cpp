@@ -187,7 +187,7 @@ int main(){
           case 1:
             {
               string nazwaPliku = "trasa_komiwojazera.json";
-              //kw.eksportujDoJSON(nazwaPliku);
+              kw.eksportujDoJSON(nazwaPliku);
             }
             break;
           case 2:
