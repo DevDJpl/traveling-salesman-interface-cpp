@@ -216,6 +216,11 @@ void Komiwojazer::eksportujDoCSV(const string& nazwaPliku){
     return;
 }
 
+/**
+ * Funkcja eksportująca przystanki jako obiekt do pliku json.
+ *
+ * @param  string  nazwaPliku
+ */
 void Komiwojazer::eksportujDoJSON(const string& nazwaPliku){
     ofstream file(nazwaPliku);
     file<<"[";
@@ -230,6 +235,11 @@ void Komiwojazer::eksportujDoJSON(const string& nazwaPliku){
     return;
 }
 
+/**
+ * Funkcja eksportująca listę przystanków do pliku txt.
+ *
+ * @param  string  nazwaPliku
+ */
 void Komiwojazer::eksportujDoTXT(const string& nazwaPliku){
     ofstream file(nazwaPliku);
     for(auto& przystanek : trasa){
@@ -242,14 +252,11 @@ void Komiwojazer::eksportujDoTXT(const string& nazwaPliku){
     return;
 }
 
-void Komiwojazer::importujCSV(const string& nazwaPliku){
-
-}
-
+/**
+ * Funkcja importująca obiekt z pliku json.
+ *
+ * @param  string  nazwaPliku
+ */
 void Komiwojazer::importujJSON(const string& nazwaPliku){
-
-}
-
-void Komiwojazer::importujTXT(const string& nazwaPliku){
 
 }

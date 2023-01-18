@@ -27,10 +27,9 @@ int main(){
     cout<<"4. Zamień przystanki miejscami"<<endl;
     cout<<"5. Sprawdź czy punkt istnieje"<<endl;
     cout<<"6. Wyświetl długość trasy"<<endl;
-    cout<<"7. Eksportuj do CSV (Utwórz macierz)"<<endl;
-    cout<<"8. Eksportuj do pliku"<<endl;
-    cout<<"9. Importuj z pliku"<<endl;
-    cout<<"10. Zakończ program"<<endl;
+    cout<<"7. Eksportuj do CSV (Generuj mape)"<<endl;
+    cout<<"8. Eksportuj do pliku (.txt lub .json)"<<endl;
+    cout<<"9. Zakończ program"<<endl;
     cout<<"========================================"<<endl;
 
     int wybor;
@@ -50,8 +49,10 @@ int main(){
           cin>>y;
           cout<<"Podaj nazwę przystanku (bez spacji): ";
           cin>>nazwa;
-
+		  system("cls");
           kw.dodajPrzystanek(x, y, nazwa);
+          cout<<"Dodano przystanek: ("<<x<<","<<y<<") - "<<nazwa<<endl;
+          kw.wyswietlTrase();
         }
         break;
       case 2:
@@ -67,7 +68,10 @@ int main(){
                 cin>>x;
                 cout<<"Podaj wartość Y: ";
                 cin>>y;
+				system("cls");
                 kw.usunPrzystanekPoXY(x, y);
+                cout<<"Usunieto przystanek: ("<<x<<","<<y<<")"<<endl;
+                kw.wyswietlTrase();
               }
               break;
             case 2:
@@ -75,7 +79,10 @@ int main(){
                 string nazwa;
                 cout<<"Podaj nazwę przystanku: ";
                 cin>>nazwa;
+				system("cls");
                 kw.usunPrzystanekPoNazwa(nazwa);
+                cout << "Usunieto przystanek: " << nazwa << endl;
+                kw.wyswietlTrase();
               }
               break;
             default:
@@ -105,7 +112,10 @@ int main(){
               cin>>x2;
               cout<<"Podaj wartość Y drugiego przystanku: ";
               cin>>y2;
+			  system("cls");
               kw.zamienKolejnosciaPoXY(x1, y1, x2, y2);
+              cout<<"Zamieniono przystanek: ("<<x1<<","<<y1<<") z przystankiem: ("<<x1<<","<<y1<<")"<<endl;
+              kw.wyswietlTrase();
             }
             break;
           case 2:
@@ -115,7 +125,10 @@ int main(){
               cin>>nazwa1;
               cout<<"Podaj nazwę drugiego przystanku: ";
               cin>>nazwa2;
+			  system("cls");
               kw.zamienKolejnosciaPoNazwa(nazwa1, nazwa2);
+              cout<<"Zamieniono przystanek: ("<<nazwa1<<") z przystankiem: ("<<nazwa2<<")"<<endl;
+              kw.wyswietlTrase();
             }
             break;
           default:
@@ -175,6 +188,8 @@ int main(){
         {
           string nazwaPliku = "trasa_komiwojazera.csv";
           kw.eksportujDoCSV(nazwaPliku);
+		  system("cls");
+          cout<<"Wyeksportowano plik: '"<<nazwaPliku<<"' w formacie .csv"<<endl;
         }
         break;
       case 8:
@@ -193,12 +208,16 @@ int main(){
             {
               string nazwaPliku = "trasa_komiwojazera.json";
               kw.eksportujDoJSON(nazwaPliku);
+			  system("cls");
+              cout<<"Wyeksportowano plik: '"<<nazwaPliku<<"' w formacie .json"<<endl;
             }
             break;
           case 2:
             {
               string nazwaPliku = "trasa_komiwojazera.txt";
               kw.eksportujDoTXT(nazwaPliku);
+			  system("cls");
+              cout<<"Wyeksportowano plik: '"<<nazwaPliku<<"' w formacie .txt"<<endl;
             }
             break;
           default:
@@ -209,48 +228,12 @@ int main(){
           }
         }
         break;
-      /*
       case 9:
-        {
-          cout<<"========== MENU IMPORTOWANIA =========="<<endl;
-          cout<<"Wybierz opcję:"<<endl;
-          cout<<"1. CSV"<<endl;
-          cout<<"2. JSON"<<endl;
-          cout<<"3. TXT"<<endl;
-          cout<<"========================================"<<endl;
-
-          int opcja;
-          cout<<">> WYBÓR: "<<endl;
-          cin>>opcja;
-          switch(opcja){
-          case 1:
-            {
-              string nazwaPliku = "trasa_komiwojazera.csv";
-              //kw.importujCSV(nazwaPliku);
-            }
-            break;
-          case 2:
-            {
-              string nazwaPliku = "trasa_komiwojazera.json";
-              //kw.importujJSON(nazwaPliku);
-            }
-            break;
-          case 3:
-            {
-              string nazwaPliku = "trasa_komiwojazera.txt";
-              //kw.importujTXT(nazwaPliku);
-            }
-            break;
-          default:
-            cout<<"Wybierz opcję od 1 do 3";
-            break;
-          }
-        }
-        break;
-      */
-      case 10:
-
-        break;
+        system("cls");
+        cout<<"================================================"<<endl;
+        cout<<"=============== KONIEC PROGRAMU ================"<<endl;
+        cout<<"================================================"<<endl;
+        exit(1);
       default:
         cout<<"Wybierz opcję od 1 do 9";
         break;
