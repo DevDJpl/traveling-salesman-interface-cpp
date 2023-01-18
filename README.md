@@ -25,4 +25,3 @@ W folderze w którym skompilowałeś program powinien pojawić się plik wykonaw
 - Eksportowanie trasy komiwojażera do mapy/tablicy w excelu.
 - Exportowanie listy do pliku txt
 - Exportowanie trasy jako obiektu JSON do pliku JSON
-- Zmiana if na switch
