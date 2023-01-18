@@ -10,7 +10,7 @@ W folderze w którym skompilowałeś program powinien pojawić się plik wykonaw
 
 # Wersja i jej funkcjonalności
 
-## Wersja programu: <span style="color:blue">1.1.1</span>
+## Wersja programu: <span style="color:blue">1.1.2</span>
 
 > **Uwaga:** Podnosić kolejno o 1 tylko w przypadku edycji plików C++
 
@@ -23,5 +23,5 @@ W folderze w którym skompilowałeś program powinien pojawić się plik wykonaw
 - Zamiana miejscami przystanków po współżędnych (x,y) lub nazwie.
 - Sprawdzanie czy przystanek istnieje po współżędnych (x,y) lub nazwie.
 - Eksportowanie trasy komiwojażera do mapy/tablicy w excelu.
-- Exportowanie listy do pliku txt
-- Exportowanie trasy jako obiektu JSON do pliku JSON
+- Exportowanie listy do pliku TXT
+- Exportowanie listy jako obiektu JSON do pliku JSON
