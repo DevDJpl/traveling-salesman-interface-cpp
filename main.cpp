@@ -52,6 +52,8 @@ int main(){
 
           system("cls");
           kw.dodajPrzystanek(x, y, nazwa);
+          cout<<"Dodano przystanek: ("<<x<<","<<y<<") - "<<nazwa<<endl;
+          kw.wyswietlTrase();
         }
         break;
       case 2:
@@ -68,6 +70,8 @@ int main(){
                 cout<<"Podaj wartość Y: ";
                 cin>>y;
                 kw.usunPrzystanekPoXY(x, y);
+                cout<<"Usunieto przystanek: ("<<x<<","<<y<<")"<<endl;
+                kw.wyswietlTrase();
               }
               break;
             case 2:
@@ -76,6 +80,8 @@ int main(){
                 cout<<"Podaj nazwę przystanku: ";
                 cin>>nazwa;
                 kw.usunPrzystanekPoNazwa(nazwa);
+                cout<<"Usunieto przystanek: "<<nazwa<<endl;
+                kw.wyswietlTrase();
               }
               break;
             default:
@@ -106,6 +112,8 @@ int main(){
               cout<<"Podaj wartość Y drugiego punktu: ";
               cin>>y2;
               kw.zamienKolejnosciaPoXY(x1, y1, x2, y2);
+              cout<<"Zamieniono przystanek: ("<<x1<<","<<y1<<") z przystankiem: ("<<x1<<","<<y1<<")"<<endl;
+              kw.wyswietlTrase();
             }
             break;
           case 2:
@@ -116,6 +124,8 @@ int main(){
               cout<<"Podaj nazwę drugiego punktu: ";
               cin>>nazwa2;
               kw.zamienKolejnosciaPoNazwa(nazwa1, nazwa2);
+              cout<<"Zamieniono przystanek: ("<<nazwa1<<") z przystankiem: ("<<nazwa2<<")"<<endl;
+              kw.wyswietlTrase();
             }
             break;
           default:
@@ -142,6 +152,7 @@ int main(){
                 }else{
                     cout<<"Przystanek o podanych wartościach ("<<x<<","<<y<<") nie istnieje na liście"<<endl;
                 }
+                kw.wyswietlTrase();
               }
               break;
             case 2:
@@ -154,6 +165,7 @@ int main(){
                 }else{
                     cout<<"Przystanek o podanej nazwie: "<<nazwa<<" nie istnieje na liście"<<endl;
                 }
+                kw.wyswietlTrase();
               }
               break;
             default:
@@ -169,6 +181,7 @@ int main(){
         {
           string nazwaPliku = "trasa_komiwojazera.csv";
           kw.eksportujDoCSV(nazwaPliku);
+          cout<<"Wyeksportowano plik: '"<<nazwaPliku<<"' w formacie .csv"<<endl;
         }
         break;
       case 8:
@@ -187,12 +200,14 @@ int main(){
             {
               string nazwaPliku = "trasa_komiwojazera.json";
               kw.eksportujDoJSON(nazwaPliku);
+              cout<<"Wyeksportowano plik: '"<<nazwaPliku<<"' w formacie .json"<<endl;
             }
             break;
           case 2:
             {
               string nazwaPliku = "trasa_komiwojazera.txt";
               kw.eksportujDoTXT(nazwaPliku);
+              cout<<"Wyeksportowano plik: '"<<nazwaPliku<<"' w formacie .txt"<<endl;
             }
             break;
           default:
@@ -202,6 +217,10 @@ int main(){
         }
         break;
       case 9:
+        system("cls");
+        cout<<"================================================"<<endl;
+        cout<<"=============== KONIEC PROGRAMU ================"<<endl;
+        cout<<"================================================"<<endl;
         exit(1);
         break;
       default:

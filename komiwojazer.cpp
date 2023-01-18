@@ -32,7 +32,6 @@ void Komiwojazer::dodajPrzystanek(int x, int y, string nazwa){
         nowyPrzystanek.dystans = sqrt(pow(x - poprzedniPrzystanek.x, 2) + pow(y - poprzedniPrzystanek.y, 2));
     }
     trasa.push_back(nowyPrzystanek);
-    cout<<"Dodano nowy przystanek: "<<nazwa<<endl;
     return;
 }
 
@@ -59,7 +58,6 @@ void Komiwojazer::usunPrzystanekPoXY(int x, int y){
     for(auto item = trasa.begin(); item != trasa.end(); item++){
         if(item->x == x && item->y == y){
             trasa.erase(item);
-            cout<<"Usunięto przystanek o kordynatach (x: "<<x<<", y: "<<y<<")"<<endl;
             break;
         }
     }
@@ -75,7 +73,6 @@ void Komiwojazer::usunPrzystanekPoNazwa(std::string nazwa){
     for(auto item = trasa.begin(); item != trasa.end(); item++){
         if(item->nazwa == nazwa){
             trasa.erase(item);
-            cout<<"Usunięto przystanek o nazwie: "<<nazwa<<endl;
             break;
         } 
     }
@@ -102,7 +99,6 @@ void Komiwojazer::zamienKolejnosciaPoXY(int x1, int y1, int x2, int y2){
 
     if(item1 != trasa.end() && item2 != trasa.end()){
         iter_swap(item1, item2);
-        cout<<"Pomyślnie zmieniono trasę miejscami"<<endl;
         return;
     }
 }
@@ -125,7 +121,6 @@ void Komiwojazer::zamienKolejnosciaPoNazwa(string nazwa1, string nazwa2){
 
     if(item1 != trasa.end() && item2 != trasa.end()){
         iter_swap(item1, item2);
-        cout<<"Pomyślnie zmieniono trasę miejscami"<<endl;
         return;
     }
 }
@@ -218,7 +213,6 @@ void Komiwojazer::eksportujDoCSV(const string& nazwaPliku){
         file<<"\n";
     }
     file.close();
-    cout<<"Pomyślnie wyeksportowano do pliku csv"<<endl;
     return;
 }
 
@@ -238,7 +232,6 @@ void Komiwojazer::eksportujDoJSON(const string& nazwaPliku){
     }
     file<<"]";
     file.close();
-    cout<<"Pomyślnie wyeksportowano do pliku json"<<endl;
     return;
 }
 
@@ -256,7 +249,6 @@ void Komiwojazer::eksportujDoTXT(const string& nazwaPliku){
         }
     }
     file.close();
-    cout<<"Pomyślnie wyeksportowano do pliku txt"<<endl;
     return;
 }
 
