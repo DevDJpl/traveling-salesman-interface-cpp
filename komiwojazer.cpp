@@ -157,6 +157,7 @@ void Komiwojazer::eksportujDoCSV(const string& nazwaPliku){
     file.close();
 }
 
+// ====================== WYEKSPORTUJ LISTĘ PRZYSTANKÓW DO JSON =========================
 void Komiwojazer::eksportujDoJSON(const string& nazwaPliku){
     ofstream file(nazwaPliku);
     file<<"[";
@@ -169,6 +170,7 @@ void Komiwojazer::eksportujDoJSON(const string& nazwaPliku){
     file<<"]";
 }
 
+// ======================= WYEKSPORTUJ LISTĘ PRZYSTANKÓW DO TXT ==========================
 void Komiwojazer::eksportujDoTXT(const string& nazwaPliku){
     ofstream file(nazwaPliku);
     for(auto& przystanek : trasa){
@@ -177,16 +179,4 @@ void Komiwojazer::eksportujDoTXT(const string& nazwaPliku){
             file<<",";
         }
     }
-}
-
-void Komiwojazer::importujCSV(const string& nazwaPliku){
-
-}
-
-void Komiwojazer::importujJSON(const string& nazwaPliku){
-
-}
-
-void Komiwojazer::importujTXT(const string& nazwaPliku){
-
 }
