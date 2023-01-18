@@ -29,8 +29,7 @@ int main(){
     cout<<"6. Wyświetl długość trasy"<<endl;
     cout<<"7. Eksportuj do CSV (Utwórz macierz)"<<endl;
     cout<<"8. Eksportuj do pliku"<<endl;
-    cout<<"9. Importuj z pliku"<<endl;
-    cout<<"10. Zakończ program"<<endl;
+    cout<<"9. Zakończ program"<<endl;
     cout<<"========================================"<<endl;
 
     int wybor;
@@ -202,76 +201,14 @@ int main(){
           }
         }
         break;
-      /*
       case 9:
-        {
-          cout<<"========== MENU IMPORTOWANIA =========="<<endl;
-          cout<<"Wybierz opcję:"<<endl;
-          cout<<"1. CSV"<<endl;
-          cout<<"2. JSON"<<endl;
-          cout<<"3. TXT"<<endl;
-          cout<<"========================================"<<endl;
-
-          int opcja;
-          cout<<">> WYBÓR: "<<endl;
-          cin>>opcja;
-          switch(opcja){
-          case 1:
-            {
-              string nazwaPliku = "trasa_komiwojazera.csv";
-              //kw.importujCSV(nazwaPliku);
-            }
-            break;
-          case 2:
-            {
-              string nazwaPliku = "trasa_komiwojazera.json";
-              //kw.importujJSON(nazwaPliku);
-            }
-            break;
-          case 3:
-            {
-              string nazwaPliku = "trasa_komiwojazera.txt";
-              //kw.importujTXT(nazwaPliku);
-            }
-            break;
-          default:
-            cout<<"Wybierz opcję od 1 do 3";
-            break;
-          }
-        }
-        break;
-      */
-      case 10:
-
+        exit(1);
         break;
       default:
         cout<<"Wybierz opcję od 1 do 10";
         break;
     }
   }
-  /*
-  while(true){
-    int wybor;
-    cout << ">> WYBÓR: " << endl;
-    cin >> wybor;
-
-    // ============== INSTRUKCJE WARUNKOWE OBSŁUGUJĄCE INTERFEJS ==============
-    if (wybor == 1) {
-
-    } else if (wybor == 2) {
-    } else if (wybor == 3) {
-    } else if (wybor == 4) {
-    } else if (wybor == 5) {
-    } else if (wybor == 6) {
-    } else if (wybor == 7) {
-    }  else if (wybor == 8) {
-        break;
-    } else {
-        cout << "Wybierz opcję od 1 do 4";
-    }
-
-  }
-  */
 
   return 0;
 }

@@ -26,32 +26,116 @@ class Komiwojazer {
     int maxX, maxY;
 
     public:
-      // ================== DEKLARACJA METODY DODAJĄCEJ PRZYSTANEK ==================
+      /**
+       * Deklaracja metody dodającej przystanek.
+       *
+       * @param  int  x
+       * @param  int  y
+       * @param  string  nazwa
+       */
       void dodajPrzystanek(int x, int y, string nazwa); 
-      // ================== DEKLARACJA METODY DODAJĄCEJ PRZYSTANEK ==================
+
+      /**
+       * Deklaracja metody wyświetlającej trase.
+       *
+       * @return trasa
+       */
       void wyswietlTrase();
-      // ========= DEKLARACJA METODY USUWAJĄCEJ PRZYSTANEK PO KOORDYNATACH ==========
+
+      /**
+       * Deklaracja metody usuwającej przystanek po współrzędnych.
+       *
+       * @param  int  x
+       * @param  int  y
+       */
       void usunPrzystanekPoXY(int x, int y);
-      // ========= DEKLARACJA METODY USUWAJĄCEJ PRZYSTANEK PO JEGO NAZWIE ===========
+
+      /**
+       * Deklaracja metody usuwającej przystanek po nazwie.
+       *
+       * @param  string  nazwa
+       */
       void usunPrzystanekPoNazwa(string nazwa);
-      // ======== DEKLARACJA METODY ZAMIENIAJĄCEJ PRZYSTANKI PO KOORDYNATACH ========
+
+      /**
+       * Deklaracja metody, która zmienia kolejność przystanków po współrzędnych.
+       *
+       * @param  int  x1
+       * @param  int  y1
+       * @param  int  x2
+       * @param  int  y2
+       */
       void zamienKolejnosciaPoXY(int x1, int y1, int x2, int y2);
-      // ========= DEKLARACJA METODY ZAMIENIAJĄCEJ PRZYSTANKI PO ICH NAZWIE =========
+
+      /**
+       * Deklaracja metody, która zmienia kolejność przystanków po ich nazwie.
+       *
+       * @param  string  nazwa1
+       * @param  string  nazwa2
+       */
       void zamienKolejnosciaPoNazwa(string nazwa1, string nazwa2);
-      // === DEKLARACJA METODY SPRAWDZAJĄCEJ ISTNIENIE PRZYSTANKU PO KOORDYNATACH ===
+
+      /**
+       * Deklaracja metody sprawdzającej czy istnienie przystanek po współrzędnych.
+       *
+       * @param  int  x
+       * @param  int  y
+       * @return bool
+       */
       bool przystanekIstniejePoXY(int x, int y);
-      // ====== DEKLARACJA METODY SPRAWDZAJĄCEJ ISTNIENIE PRZYSTANKU PO NAZWIE ======
+
+      /**
+       * Deklaracja metody sprawdzającej czy istnienie przystanek po nazwie.
+       *
+       * @param  string  nazwa
+       * @return bool
+       */
       bool przystanekIstniejePoNazwa(string nazwa);
-      // ============== DEKLARACJA METODY SPRAWDZAJĄCEJ DŁUGOŚĆ TRASY ===============
+
+      /**
+       * Deklaracja metody sprawdzającej długość trasy.
+       *
+       * @return długość trasy
+       */
       double getDlugoscTrasy();
-      // ============= DEKLARACJA METODY EKSPORTUJĄCEJ TRASĘ DO EXCELA ==============
+
+      /**
+       * Deklaracja metody ustawiającej maksymalną wartość x i y.
+       *
+       * @param  int  x
+       * @param  int  y
+       * @param  string  nazwa
+       * @return output
+       */
       void setMaxXMaxY();
+
+      /**
+       * Deklaracja metody eksportującej trasę do excela.
+       *
+       * @param  string  nazwaPliku
+       */
       void eksportujDoCSV(const string& nazwaPliku);
+
+      /**
+       * Deklaracja metody eksportującej trasę do pliku json.
+       *
+       * @param  string  nazwaPliku
+       */
       void eksportujDoJSON(const string& nazwaPliku);
+
+      /**
+       * Deklaracja metody eksportującej trasę do pliku txt.
+       *
+       * @param  string  nazwaPliku
+       */
       void eksportujDoTXT(const string& nazwaPliku);
-      void importujCSV(const string& nazwaPliku);
+
+      /**
+       * Deklaracja metody importującej trasę z pliku json.
+       *
+       * @param  string  nazwaPliku
+       */
       void importujJSON(const string& nazwaPliku);
-      void importujTXT(const string& nazwaPliku);
 };
 
 #endif

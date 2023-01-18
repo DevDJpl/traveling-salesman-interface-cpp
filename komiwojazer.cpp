@@ -13,7 +13,13 @@
 
 using namespace std;
 
-// ====== DODAJ "PRZYSTANEK" NA TRASIE POPRZEZ PODANIE KOORDYNATÓW I NAZWY (NP.: MIASTA) ======
+/**
+ * Funkcja dodająca "Przystanek" na trasie poprzez podanie koordynatów i nazwy.
+ *
+ * @param  int  x
+ * @param  int  y
+ * @return string nazwa
+ */
 void Komiwojazer::dodajPrzystanek(int x, int y, string nazwa){
     if(x < 0 || y < 0){
         cout<<"Wartości X i Y nie mogą być ujemne!"<<endl;
@@ -26,9 +32,14 @@ void Komiwojazer::dodajPrzystanek(int x, int y, string nazwa){
         nowyPrzystanek.dystans = sqrt(pow(x - poprzedniPrzystanek.x, 2) + pow(y - poprzedniPrzystanek.y, 2));
     }
     trasa.push_back(nowyPrzystanek);
+    cout<<"Dodano nowy przystanek: "<<nazwa<<endl;
+    return;
 }
 
-// =========== WYŚWIETL TRASĘ "KOMIWOJAŻERA" WSZYSTKICH PRZYSTANKÓW Z KOORDYNATAMI ===========
+/**
+ * Funkcja wyświetlająca trasę "Komiwojażera" wszystkich przystanków z koordynatami.
+ *
+ */
 void Komiwojazer::wyswietlTrase(){
     cout<<"========== TRASA KOMIWOJAZERA =========="<<endl;
     int lp = 1;
@@ -38,27 +49,47 @@ void Komiwojazer::wyswietlTrase(){
     }
 }
 
-// =========== USUŃ PRZYSTANEK Z LISTY KOMIWOJAŻERA PRZEZ PODANIE KOORDYNATÓW X I Y ===========
+/**
+ * Funkcja usuwająca przystanek z listy komiwojażera przez podanie koordynatów x i y.
+ *
+ * @param  int  x
+ * @param  int  y
+ */
 void Komiwojazer::usunPrzystanekPoXY(int x, int y){
     for(auto item = trasa.begin(); item != trasa.end(); item++){
         if(item->x == x && item->y == y){
             trasa.erase(item);
+            cout<<"Usunięto przystanek o kordynatach (x: "<<x<<", y: "<<y<<")"<<endl;
             break;
         }
     }
+    return;
 }
 
-// ============== USUŃ PRZYSTANEK Z LISTY KOMIWOJAŻERA PRZEZ PODANIE JEGO NAZWY ===============
+/**
+ * Funkcja usuwająca przystanek z listy komiwojażera przez podanie ich nazwy.
+ *
+ * @param  string  nazwa
+ */
 void Komiwojazer::usunPrzystanekPoNazwa(std::string nazwa){
     for(auto item = trasa.begin(); item != trasa.end(); item++){
         if(item->nazwa == nazwa){
             trasa.erase(item);
+            cout<<"Usunięto przystanek o nazwie: "<<nazwa<<endl;
             break;
         } 
     }
+    return;
 }
 
-// ================ ZAMIEŃ PRZYSTANKI MIEJSCAMI PRZEZ PODANIE ICH KOORDYNATÓW =================
+/**
+ * Funkcja zmieniająca przystanki miejscami przez podanie ich koordynatów.
+ *
+ * @param  int  x1
+ * @param  int  y1
+ * @param  int  x2
+ * @param  int  y2
+ */
 void Komiwojazer::zamienKolejnosciaPoXY(int x1, int y1, int x2, int y2){
     auto item1 = trasa.end(), item2 = trasa.end();
     for(auto item = trasa.begin(); item != trasa.end(); item++){
@@ -71,10 +102,17 @@ void Komiwojazer::zamienKolejnosciaPoXY(int x1, int y1, int x2, int y2){
 
     if(item1 != trasa.end() && item2 != trasa.end()){
         iter_swap(item1, item2);
+        cout<<"Pomyślnie zmieniono trasę miejscami"<<endl;
+        return;
     }
 }
 
-// =================== ZAMIEŃ PRZYSTANKI MIEJSCAMI PRZEZ PODANIE ICH NAZWA ===================
+/**
+ * Funkcja zmieniająca przystanki miejscami przez podanie ich nazwy.
+ *
+ * @param  string  nazwa1
+ * @param  string  nazwa2
+ */
 void Komiwojazer::zamienKolejnosciaPoNazwa(string nazwa1, string nazwa2){
     auto item1 = trasa.end(), item2 = trasa.end();
     for(auto it = trasa.begin(); it != trasa.end(); it++){
@@ -87,10 +125,18 @@ void Komiwojazer::zamienKolejnosciaPoNazwa(string nazwa1, string nazwa2){
 
     if(item1 != trasa.end() && item2 != trasa.end()){
         iter_swap(item1, item2);
+        cout<<"Pomyślnie zmieniono trasę miejscami"<<endl;
+        return;
     }
 }
 
-// ============ SPRAWDŹ CZY PRZYSTANEK ISTNIEJE PRZEZ PODANIE JEGO KOORDYNATÓW ==============
+/**
+ * Funkcja sprawdzająca czy przystanek istnieje poprzez podanie jego koordynatów.
+ *
+ * @param  int  x
+ * @param  int  y
+ * @return bool
+ */
 bool Komiwojazer::przystanekIstniejePoXY(int x, int y){
     for(auto przystanek : trasa){
         if(przystanek.x == x && przystanek.y == y){
@@ -100,7 +146,12 @@ bool Komiwojazer::przystanekIstniejePoXY(int x, int y){
     return false;
 }
 
-// =============== SPRAWDŹ CZY PRZYSTANEK ISTNIEJE PRZEZ PODANIE JEGO NAZWY =================
+/**
+ * Funkcja sprawdzająca czy przystanek istnieje poprzez podanie jego nazwy.
+ *
+ * @param  string  nazwa
+ * @return bool
+ */
 bool Komiwojazer::przystanekIstniejePoNazwa(string nazwa){
     for(auto przystanek : trasa){
         if(przystanek.nazwa == nazwa){
@@ -110,7 +161,11 @@ bool Komiwojazer::przystanekIstniejePoNazwa(string nazwa){
     return false;
 }
 
-// ======================== WYŚWIETLA DŁUGOŚĆ TRASY KOMIWOJAŻERA ===========================
+/**
+ * Funkcja wyświetlająca długość trasy komiwojażera.
+ *
+ * @return  double  dlugosc
+ */
 double Komiwojazer::getDlugoscTrasy(){
     double dlugosc = 0;
     Przystanek poprzedniPrzystanek;
@@ -124,7 +179,10 @@ double Komiwojazer::getDlugoscTrasy(){
     return dlugosc;
 }
 
-// ======================== WYEKSPORTUJ "MAPĘ" PUNKTÓW DO EXCELA ===========================
+/**
+ * Funkcja ustawiająca maksymalną wartość dla x i y.
+ *
+ */
 void Komiwojazer::setMaxXMaxY(){
     maxX = maxY = 0;
     for(const auto& przystanek : trasa){
@@ -133,6 +191,11 @@ void Komiwojazer::setMaxXMaxY(){
     }
 }
 
+/**
+ * Funkcja eksportująca "Mapę" punktów do Excela.
+ *
+ * @param  string  nazwaPliku
+ */
 void Komiwojazer::eksportujDoCSV(const string& nazwaPliku){
     // Policz maxX i maxY
     setMaxXMaxY();
@@ -155,40 +218,36 @@ void Komiwojazer::eksportujDoCSV(const string& nazwaPliku){
         file<<"\n";
     }
     file.close();
+    cout<<"Pomyślnie wyeksportowano do pliku csv"<<endl;
+    return;
 }
 
+/**
+ * Funkcja eksportująca przystanki jako obiekt do pliku json.
+ *
+ * @param  string  nazwaPliku
+ */
 void Komiwojazer::eksportujDoJSON(const string& nazwaPliku){
-
-/*
-    {"employees":[    
-        {"name":"Ram", "email":"ram@gmail.com", "age":23},    
-        {"name":"Shyam", "email":"shyam23@gmail.com", "age":28},  
-        {"name":"John", "email":"john@gmail.com", "age":33},    
-        {"name":"Bob", "email":"bob32@gmail.com", "age":41}   
-    ]}  
-*/
-
     ofstream file(nazwaPliku);
     file<<"[";
     for(auto& przystanek : trasa){
         file<<"{\"name\":\""<<przystanek.nazwa<<"\",\"position\":[{\"x\":\""<<przystanek.x<<"\",\"y\":\""<<przystanek.y<<"\"}]}";
-        //file<<'{"name":"'<<przystanek.nazwa<<'"}';
-        //file<<'{"name":"'<<przystanek.nazwa<<'","position":[x:'<<przystanek.x<<',y:'<<przystanek.y<<']}';
         if(&przystanek != &trasa.back()){
             file<<",";
         } 
     }
     file<<"]";
+    file.close();
+    cout<<"Pomyślnie wyeksportowano do pliku json"<<endl;
+    return;
 }
 
+/**
+ * Funkcja eksportująca listę przystanków do pliku txt.
+ *
+ * @param  string  nazwaPliku
+ */
 void Komiwojazer::eksportujDoTXT(const string& nazwaPliku){
-    int lp = 0;
-
-    // Zlicz wszystkie przystanki
-    for(auto przystanek : trasa){
-        lp++;
-    }
-
     ofstream file(nazwaPliku);
     for(auto& przystanek : trasa){
         file<<przystanek.nazwa;
@@ -196,16 +255,16 @@ void Komiwojazer::eksportujDoTXT(const string& nazwaPliku){
             file<<",";
         }
     }
+    file.close();
+    cout<<"Pomyślnie wyeksportowano do pliku txt"<<endl;
+    return;
 }
 
-void Komiwojazer::importujCSV(const string& nazwaPliku){
-
-}
-
+/**
+ * Funkcja importująca obiekt z pliku json.
+ *
+ * @param  string  nazwaPliku
+ */
 void Komiwojazer::importujJSON(const string& nazwaPliku){
-
-}
-
-void Komiwojazer::importujTXT(const string& nazwaPliku){
 
 }
