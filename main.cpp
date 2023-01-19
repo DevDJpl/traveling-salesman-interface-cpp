@@ -8,6 +8,7 @@
 #include <fstream>
 #include <vector>
 #include <algorithm>
+#include <limits>
 #include "komiwojazer.h"
 #include "komiwojazer.cpp" // !sam plik .h w VSCode generuje błąd!
 using namespace std;
@@ -33,20 +34,29 @@ int main(){
     cout<<"========================================"<<endl;
 
     int wybor;
-    cout<<">> WYBÓR: "<<endl;
+    cout<<">> WYBÓR: ";
     cin>>wybor;
+	cout<<endl;
 
     // ============== INSTRUKCJE OBSŁUGUJĄCE INTERFEJS ==============
     switch(wybor){
       case 1:
         {
-          int x, y;
+          int x, y = 0;
           string nazwa;
 
           cout<<"Podaj wartość X: ";
-          cin>>x;
+		  while(!(cin>>x)){
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout<<"Wartość musi być numerem!"<<endl;
+		  }
           cout<<"Podaj wartość Y: ";
-          cin>>y;
+		  while(!(cin>>y)){
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout<<"Wartość musi być numerem!"<<endl;
+		  }
           cout<<"Podaj nazwę przystanku (bez spacji): ";
           cin>>nazwa;
 		  system("cls");
@@ -63,11 +73,19 @@ int main(){
           switch(opcja){
             case 1:
               {
-                int x, y;
+                int x, y = 0;
                 cout<<"Podaj wartość X: ";
-                cin>>x;
+				while(!(cin>>x)){
+				  cin.clear();
+				  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				  cout<<"Wartość musi być numerem!"<<endl;
+				}
                 cout<<"Podaj wartość Y: ";
-                cin>>y;
+                while(!(cin>>y)){
+				  cin.clear();
+				  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				  cout<<"Wartość musi być numerem!"<<endl;
+				}
 				system("cls");
                 kw.usunPrzystanekPoXY(x, y);
                 cout<<"Usunieto przystanek: ("<<x<<","<<y<<")"<<endl;
@@ -81,7 +99,7 @@ int main(){
                 cin>>nazwa;
 				system("cls");
                 kw.usunPrzystanekPoNazwa(nazwa);
-                cout << "Usunieto przystanek: " << nazwa << endl;
+                cout<<"Usunieto przystanek: "<<nazwa<<endl;
                 kw.wyswietlTrase();
               }
               break;
