@@ -1,27 +1,27 @@
 # PROGRAM KOMIWOJAZER C++
 
-## Kompilacja programu
+## Program compilation
 
-Użyj w konsoli: `g++ main.cpp -o main`
+Use in console: `g++ main.cpp -o main`
 
-## Uruchamianie
+## Startup
 
-W folderze w którym skompilowałeś program powinien pojawić się plik wykonawczy main.exe, otwórz go 2 kliknięciami lub poprzez konsolę
+The main.exe executable file should appear in the folder where you compiled the program, open it with 2 clicks or via the console
 
-# Wersja i jej funkcjonalności
+# Version and its functionalities
 
-## Wersja programu: <span style="color:blue">1.1.3</span>
+## Program version: <span style="color:blue">1.1.3</span>
 
-> **Uwaga:** Podnosić kolejno o 1 tylko w przypadku edycji plików C++
+> **Note:** Raise by 1 only when editing C++ files
 
-## Funkcjonalności
+## Functionalities
 
-- Interfejs użytkownika w postaci menu konsolowego.
-- Dodawanie nowego przystanku do trasy.
-- Wyświetlanie listy reprezentującej trasę.
-- Usuwanie przystanków z listy po współżędnych (x,y) lub nazwie.
-- Zamiana miejscami przystanków po współżędnych (x,y) lub nazwie.
-- Sprawdzanie czy przystanek istnieje po współżędnych (x,y) lub nazwie.
-- Eksportowanie trasy komiwojażera do mapy/tablicy w excelu.
-- Exportowanie listy do pliku TXT
-- Exportowanie listy jako obiektu JSON do pliku JSON
+- User interface in the form of a console menu.
+- Adding a new stop to the route.
+- Displaying a list representing the route.
+- Removing stops from the list by coordinates (x,y) or name.
+- Swap stops after coordinates (x,y) or name.
+- Checking if a stop exists by coordinates (x,y) or name.
+- Exporting a traveling salesman route to a map/table in excel.
+- Exporting the list to a TXT file
+- Exporting a list as a JSON object to a JSON file
