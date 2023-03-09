@@ -1,4 +1,4 @@
-# PROGRAM KOMIWOJAZER C++
+# Traveling Salesman Interface C++
 
 ## Program compilation
 
